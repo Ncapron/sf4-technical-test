@@ -1,3 +1,12 @@
+github_comments:
+    resource: "@GithubBundle/Resources/config/routing/comments.yml"
+    prefix:   /:username/comments
+
 github_homepage:
     path:     /
     defaults: { _controller: GithubBundle:Default:index }
+
+search_item:
+    path:     /items
+    defaults: { _controller: GithubBundle:Default:list }
+    methods: [POST]

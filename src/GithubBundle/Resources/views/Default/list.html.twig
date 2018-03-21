@@ -1,0 +1,28 @@
+
+<div class="mt20 table-responsive">
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th width="40" class="text-center">#</th>
+                <th width="100">Picture</th>
+                <th width="200" class="text-center">Username</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            {% for item in items %}
+                <tr>
+                    <td class="text-center">{{ loop.index }}</td>
+                    <td class="text-center"><img src="{{item.avatar_url}}" alt="picture"></td>
+                    <td class="text-center"><a href='{{path('github_comments')}}'>{{ item.login }}</a></td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="999" class="text-center">
+                        Aucun résultat
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
