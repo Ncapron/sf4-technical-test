@@ -1,0 +1,3 @@
+github_homepage:
+    path:     /
+    defaults: { _controller: GithubBundle:Default:index }

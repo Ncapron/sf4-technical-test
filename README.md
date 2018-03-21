@@ -2,6 +2,7 @@
 
 Début 18h15
 Pause 19h00
+reprise mercredi 12h20
 
 ### Tache
 
