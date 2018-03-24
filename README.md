@@ -41,7 +41,7 @@ mercredi Pause 19h00
 reprise mercredi 20h25
 Pause mercredi 20h50
 reprise samedi 13h30
-fin samedi 16h30
+fin samedi 16h10
 
 
 
