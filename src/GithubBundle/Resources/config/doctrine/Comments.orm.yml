@@ -11,9 +11,11 @@ GithubBundle\Entity\Comments:
     fields:
         name:
             type: string
-            length: 255
-            unique: true
+            length: 30
         description:
             type: string
             length: 255
+        username:
+            type: string
+            length: 30
     lifecycleCallbacks: {  }

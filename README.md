@@ -1,9 +1,62 @@
-# StadLine Technical Test
+### Installation
 
-Début 18h15
-Pause 19h00
+git clone https://github.com/Ncapron/sf4-technical-test.git
+composer install dans la console dans le projet
+configurer la bdd dans le fichier "parameters.yml"
+
+php app/console doctrine:database:create
+php app/console doctrine:generate:entities GithubBundle
+php app/console doctrine:schema:update --force
+php app/console asset install
+
+
+## Informations sur le projet  
+
+
+### Connexion
+
+Une fois l'installation terminé, lancez le serveur local (MAMP / WAMP / Serveur local).
+Dirigez vous vers l'url du projet http://localhost: + port + / + pathToFolder + /sf4-technical-test/web/app_dev.php
+
+Une demande d'authentication vous est demandé. Je n'ai pas créé d'utilisateur par défault mais vous pouvez cliquer sur "Pas encore de compte ?" afin de créer votre propre compte.
+Une fois votre compte créé, vous êtes redirigé vers le login et vous pouvez ainsi vous connecter.
+
+Pour la partie authentication je me suis servi du FoSUserBundle. La doc est dispo ici : https://symfony.com/doc/current/bundles/FOSUserBundle/index.html
+
+
+### Recherche et commentaires
+
+Au départ j'avais fait une recherche direct par rapport aux informations inscrite dans l'input (j'ai laissé en commentaire l'ancienne version) mais à cause de la Rate Limit github j'ai alors utilisé un bouton recherche basique.
+
+Vous inscrivez le nom d'un utilisateur et le tableau se remplit s'il trouve des utilisateurs.
+
+Au clic sur son nom, vous arrivez sur un formulaire qui vous demande le nom et le commentaire.
+
+J'ai essayé de le faire en select avec des options (j'ai laissé en commentaire) mais je n'ai pas réussi à le valider, j'avais une erreur m'indiquant que la value était vide.
+
+Lorsque vous inscrivez "username/repoName" tel que "Ncapron/AJAX" une recherche se fait afin d'être sur que ce repo existe, s'il existe, un message indique que le commentaire a été créé et vous redirige sur la création d'un commentaire pour le même utilisateur.
+
+Si en revenche ce repo n'existe pas un message vous indique de vérifier le nom du repo et celui ci n'est pas enregistré.
+
+Un edit et une suppression est possible pour chaque commentaire.
+
+Les commentaires créés pour un utilisateur ne sont visible que lorsque vous cliquez sur celui ci. Par exemple les commentaires créés pour "Ncapron" ne sont pas visible si vous allez sur "nicaproni". (findByUsername)
+
+
+
+### Durée effectuée
+mardi Début 18h15
+mercredi Pause 19h00
 reprise mercredi 20h25
 Pause mercredi 20h50
+reprise samedi 11h
+fin samedi 14h45
+
+
+
+
+
+# StadLine Technical Test
 
 ### Tache
 

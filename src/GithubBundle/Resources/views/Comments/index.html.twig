@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    {% for comment in comments %}
+        <div class="row">
+          <div class="col-sm-12 col-md-12">
+            <div class="thumbnail">
+              <div class="caption">
+                  <p><b>Nom du repo</b> : {{ comment.name }}</p>
+                  <p><b>Commentaire</b> : {{ comment.description }}</p>
+                  <p><a href="{{ path(':username_comments_edit', { 'id': comment.id, 'username':username}) }}" class="btn btn-primary center" role="button">Editer le commentaire</a></p>
+              </div>
+            </div>
+          </div>
+        </div>
+    {% endfor %}
+
+{% endblock %}

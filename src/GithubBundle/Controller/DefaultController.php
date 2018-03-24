@@ -20,6 +20,7 @@ class DefaultController extends Controller
 
         $ch = curl_init('https://api.github.com/search/users?q=' . $data);
 
+
         curl_setopt($ch, CURLOPT_HTTPHEADER, [
           'Accept: application/vnd.github.v3+json',
           'User-Agent: GitHub-username'
@@ -28,8 +29,6 @@ class DefaultController extends Controller
         curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
 
         $json = curl_exec($ch);
-        curl_close($ch);
-
         $character = json_decode($json);
         $res = $character->items;
 

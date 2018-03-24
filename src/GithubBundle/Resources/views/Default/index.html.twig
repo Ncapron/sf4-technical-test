@@ -5,7 +5,8 @@
     <h1 class="inline-title">Recherche Github</h1>
     <div class="row">
         <div class="col-sm-3 mt10 pull-right">
-            <input type="text" class="form-control" id="search-field" name="search" aria-controls="table" placeholder="Rechercher...">
+            <!-- <input type="text" class="form-control" id="search-field" name="search" aria-controls="table" placeholder="Rechercher..."> -->
+            <input type="text" name="search" value=""> <a id="search-field" class="btn btn-default">Recherche</a>
         </div>
     </div>
     <hr>
@@ -22,8 +23,8 @@
 
 {% block js %}
     <script type="text/javascript">
-
-        $('#search-field').on('input', function (req) {
+        // $('#search-field').on('input', function (req) {    
+        $('#search-field').on('click', function (req) {
             let search = $("input[type=text][name=search]").val();
             console.log(search);
             $.ajax({

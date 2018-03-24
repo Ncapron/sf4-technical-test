@@ -13,8 +13,8 @@
             {% for item in items %}
                 <tr>
                     <td class="text-center">{{ loop.index }}</td>
-                    <td class="text-center"><img src="{{item.avatar_url}}" alt="picture"></td>
-                    <td class="text-center"><a href='{{path('github_comments')}}'>{{ item.login }}</a></td>
+                    <td class="text-center"><img src="{{ item.avatar_url }}" alt="picture"></td>
+                    <td class="text-center"><a href='{{ path(':username_comments_new', { 'username': item.login }) }}'>{{ item.login }}</a></td>
                 </tr>
             {% else %}
                 <tr>

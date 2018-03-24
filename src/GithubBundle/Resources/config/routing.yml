@@ -1,6 +1,6 @@
-github_comments:
+:username_github:
     resource: "@GithubBundle/Resources/config/routing/comments.yml"
-    prefix:   /:username/comments
+    prefix:   /
 
 github_homepage:
     path:     /

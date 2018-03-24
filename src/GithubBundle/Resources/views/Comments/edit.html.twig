@@ -1,0 +1,71 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <a href="{{ path('github_homepage') }}" class="btn btn-default btn-block">Choisir un autre utilisateur</a>
+    <h1 class="text-center">Editer le commentaire</h1>
+<hr>
+    <div class="col-md-8 col-sm-12">
+        {{ form_start(edit_form) }}
+            <div class="row hidden">
+                <div class="col-md-6 col-md-offset-6">
+                    <div class="form-group">
+                        {{ form_widget(edit_form.username, {'attr': {'class': 'form-control', 'value': username}}) }}
+                        {{ form_errors(edit_form.username) }}
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 col-md-offset-6">
+                    <div class="form-group">
+                        {{ form_widget(edit_form.name, {'attr': {'class': 'form-control', 'placeholder': 'Nom du repo'}}) }}
+                        {{ form_errors(edit_form.name) }}
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 col-md-offset-6">
+                    <div class="form-group">
+                        {{ form_widget(edit_form.description, {'attr': {'class': 'form-control', 'placeholder': 'Commentaire'}}) }}
+                        {{ form_errors(edit_form.description) }}
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 col-md-offset-6">
+                    <div class="form-group">
+                        <input type="submit" class="btn btn-primary btn-block" value="Valider">
+                    </div>
+                </div>
+            </div>
+
+
+        {{ form_end(edit_form) }}
+        <div class="row">
+            <div class="col-md-6 col-md-offset-6">
+                <div class="form-group">
+                  <a href="{{ path(':username_comments_delete', { 'id': comment.id, 'username':username}) }}" class="btn btn-primary center btn-danger" role="button">Supprimer le commentaire</a>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 col-md-offset-6">
+                <div class="form-group">
+                  <a href="{{ path(':username_comments_new', {'username':username}) }}" class="btn btn-primary center btn-info" role="button">Annuler</a>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 col-md-offset-6">
+                <div class="form-group">
+                    {% if app.session.flashBag.has('danger') %}
+                        <div class="alert alert-danger">
+                            {% for msg in app.session.flashBag.get('danger') %}
+                                {{ msg }}
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

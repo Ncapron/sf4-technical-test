@@ -1,24 +1,20 @@
 :username_comments_index:
-    path:     /
+    path:     /comments
     defaults: { _controller: "GithubBundle:Comments:index" }
     methods:  GET
 
-:username_comments_show:
-    path:     /{id}/show
-    defaults: { _controller: "GithubBundle:Comments:show" }
-    methods:  GET
 
 :username_comments_new:
-    path:     /new
+    path:     /{username}/comments
     defaults: { _controller: "GithubBundle:Comments:new" }
     methods:  [GET, POST]
 
 :username_comments_edit:
-    path:     /{id}/edit
+    path:     /{id}/{username}/edit
     defaults: { _controller: "GithubBundle:Comments:edit" }
     methods:  [GET, POST]
 
 :username_comments_delete:
-    path:     /{id}/delete
+    path:     /{id}/{username}/delete
     defaults: { _controller: "GithubBundle:Comments:delete" }
-    methods:  DELETE
+    methods:  [GET, DELETE]
