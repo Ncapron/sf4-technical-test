@@ -5,24 +5,15 @@ composer install dans la console dans le projet
 configurer la bdd dans le fichier "parameters.yml"
 
 php app/console doctrine:database:create
+
 php app/console doctrine:generate:entities GithubBundle
+
 php app/console doctrine:schema:update --force
+
 php app/console asset install
 
 
 ## Informations sur le projet  
-
-
-### Connexion
-
-Une fois l'installation terminé, lancez le serveur local (MAMP / WAMP / Serveur local).
-Dirigez vous vers l'url du projet http://localhost: + port + / + pathToFolder + /sf4-technical-test/web/app_dev.php
-
-Une demande d'authentication vous est demandé. Je n'ai pas créé d'utilisateur par défault mais vous pouvez cliquer sur "Pas encore de compte ?" afin de créer votre propre compte.
-Une fois votre compte créé, vous êtes redirigé vers le login et vous pouvez ainsi vous connecter.
-
-Pour la partie authentication je me suis servi du FoSUserBundle. La doc est dispo ici : https://symfony.com/doc/current/bundles/FOSUserBundle/index.html
-
 
 ### Recherche et commentaires
 
@@ -42,7 +33,7 @@ Un edit et une suppression est possible pour chaque commentaire.
 
 Les commentaires créés pour un utilisateur ne sont visible que lorsque vous cliquez sur celui ci. Par exemple les commentaires créés pour "Ncapron" ne sont pas visible si vous allez sur "nicaproni". (findByUsername)
 
-
+Je n'ai pas eu le temps de faire le redirect si la personne n'est pas loggué. Mais FosUser est installé /register + /login. J'ai eu un soucis dans l'edit pour les boutons supprimer et annuler qui ne sont pas alligné.
 
 ### Durée effectuée
 mardi Début 18h15
