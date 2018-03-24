@@ -44,7 +44,17 @@ reprise samedi 13h30
 fin samedi 16h10
 
 
+### AVANCEMENT
 
+Création du FosUser.
+
+Création du bundle.
+
+Création de l'Entity.
+
+Test de l'api github sur une page blanche en envoyant les infos en parameters (en clair dans le code afin de voir et comprendre les objets récupérés).
+
+mise en place des formulaires et création des vues.
 
 
 # StadLine Technical Test
