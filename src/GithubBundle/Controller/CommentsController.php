@@ -146,11 +146,11 @@ class CommentsController extends Controller
                         'username' => $username,
                     ));
                 }
-                $request->getSession()
-                    ->getFlashBag()
-                    ->add('danger',  'Une erreur est survenue. Veuillez vérifier le nom du repo et réessayer.')
-                ;
             }
+            $request->getSession()
+                ->getFlashBag()
+                ->add('danger',  'Une erreur est survenue. Veuillez vérifier le nom du repo et réessayer.')
+            ;
         }
 
 
