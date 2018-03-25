@@ -15,13 +15,19 @@ php app/console asset install
 
 ## Informations sur le projet  
 
+### connexion
+
+Je n'ai pas eu le temps de faire les vues pour register + login. Mais FosUser est installé /register + /login. Une fois le projet installé, si vous n'êtes pas logué ça vous redirigera vers /login lorsque vous essayerez d'atteindre le '/', si vous n'avez pas de compte, vous pouvez cliquer sur "pas encore de compte ?" afin d'être redirigé vers le register, une fois le formulaire rempli j'ai créé un href pour être redirigé vers le /, en théorie vu que vous avez rempli le formulaire, vous serez renvoyé vers le / mais si vous perdez la session vous serez redirigé vers le /login.
+
 ### Recherche et commentaires
+
+J'ai créé un bundle "GithubBundle" qui a une entity du nom de comments, un orm avec 3 paramètres 'nom, description, username' un formulaire et les vues.
 
 Au départ j'avais fait une recherche direct par rapport aux informations inscrite dans l'input (j'ai laissé en commentaire l'ancienne version) mais à cause de la Rate Limit github j'ai alors utilisé un bouton recherche basique.
 
 Vous inscrivez le nom d'un utilisateur et le tableau se remplit s'il trouve des utilisateurs.
 
-Au clic sur son nom, vous arrivez sur un formulaire qui vous demande le nom et le commentaire.
+Au clic sur son nom, vous arrivez sur un formulaire qui vous demande le nom du repo et le commentaire.
 
 J'ai essayé de le faire en select avec des options (j'ai laissé en commentaire) mais je n'ai pas réussi à le valider, j'avais une erreur m'indiquant que la value était vide.
 
@@ -33,7 +39,7 @@ Un edit et une suppression est possible pour chaque commentaire.
 
 Les commentaires créés pour un utilisateur ne sont visible que lorsque vous cliquez sur celui ci. Par exemple les commentaires créés pour "Ncapron" ne sont pas visible si vous allez sur "nicaproni". (findByUsername)
 
-Je n'ai pas eu le temps de faire le redirect si la personne n'est pas loggué. Mais FosUser est installé /register + /login. J'ai eu un soucis dans l'edit pour les boutons supprimer et annuler qui ne sont pas alligné.
+
 
 ### Durée effectuée
 mardi Début 18h15
